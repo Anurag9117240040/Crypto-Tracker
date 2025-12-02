@@ -1,0 +1,302 @@
+[
+  {
+    "id": "TC001",
+    "title": "Live Cryptocurrency Data Auto-Refresh",
+    "description": "Verify that live cryptocurrency price, volume, and change data is fetched correctly from the CoinGecko API and updates automatically every 30 seconds without page refresh.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the homepage."
+      },
+      {
+        "type": "assertion",
+        "description": "Check initial cryptocurrency data (price, volume, and change) is displayed in the live-updated price table."
+      },
+      {
+        "type": "action",
+        "description": "Wait for 30 seconds."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the cryptocurrency data table refreshes automatically with updated data without a page reload."
+      },
+      {
+        "type": "action",
+        "description": "Disable network connection."
+      },
+      {
+        "type": "action",
+        "description": "Wait for another 30 seconds to attempt update."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that a meaningful error or fallback message is displayed or old data remains visible without crashing the app."
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Portfolio Holdings Persistence",
+    "description": "Ensure that user portfolio holdings are correctly added, updated, and removed with data persisting across browser sessions via localStorage.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the portfolio section."
+      },
+      {
+        "type": "action",
+        "description": "Add a new cryptocurrency holding with valid coin, amount, and purchase price."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the new holding appears in the portfolio list with correct details."
+      },
+      {
+        "type": "action",
+        "description": "Refresh the browser page."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the portfolio holding persists and loads correctly from localStorage."
+      },
+      {
+        "type": "action",
+        "description": "Update the holding amount and save."
+      },
+      {
+        "type": "assertion",
+        "description": "Check the updated amount is displayed and persisted after page refresh."
+      },
+      {
+        "type": "action",
+        "description": "Remove the holding from portfolio."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the holding is removed and not present after refreshing the page."
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Price Alert Notification Trigger",
+    "description": "Verify that user-configured price alerts trigger notification alerts correctly based on live price changes.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to portfolio and add a price alert for a chosen coin with a target price above current market price."
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the price alert configuration is saved and visible in the alert list."
+      },
+      {
+        "type": "action",
+        "description": "Simulate or wait until the coin price reaches or exceeds the target price."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that a browser notification alert is displayed to the user."
+      },
+      {
+        "type": "action",
+        "description": "Set a price alert with target price below current price to check downward triggers."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm alert triggers properly when price drops to threshold."
+      },
+      {
+        "type": "action",
+        "description": "Check that alerts can be disabled or deleted and no notifications are sent afterward."
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Interactive Coin Line Chart Updates",
+    "description": "Validate that the line chart updates correctly when selecting different coins and timeframes, accurately reflecting price trends.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the coin line chart component."
+      },
+      {
+        "type": "action",
+        "description": "Select a coin from the available filter options."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the chart updates to display price data for the selected coin."
+      },
+      {
+        "type": "action",
+        "description": "Change the timeframe selection (e.g., 24 hours, 7 days, 30 days)."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the chart re-renders and correctly reflects the selected timeframe’s price trend."
+      },
+      {
+        "type": "action",
+        "description": "Switch to another coin and timeframe combination."
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure chart updates smoothly without errors and data corresponds to selections."
+      },
+      {
+        "type": "action",
+        "description": "Test edge cases such as selecting unsupported or no data coins."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm appropriate handling, e.g., display of 'No Data' message or empty chart."
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Responsive Design on Desktop and Mobile",
+    "description": "Check that the entire CryptoTracker web app UI, including table layout, portfolio, charts, and navigation, responds correctly on different screen sizes and devices.",
+    "category": "ui",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Access the site on a desktop browser with a large screen."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all components (hero, about, observation, portfolio, footer) render fully and align as per design."
+      },
+      {
+        "type": "action",
+        "description": "Resize browser window to tablet viewport dimensions."
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure UI adjusts correctly with no overlapping elements or horizontal scroll."
+      },
+      {
+        "type": "action",
+        "description": "Open the site on a mobile device simulator or real mobile device."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the navigation menus, tables, charts, and portfolio controls are usable and visually correct."
+      },
+      {
+        "type": "action",
+        "description": "Test interactive elements such as dropdowns and buttons for touch responsiveness."
+      },
+      {
+        "type": "assertion",
+        "description": "Validate that animations and gradients do not degrade performance or accessibility."
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Third-Party Live Chat Integration Functionality",
+    "description": "Verify the third-party live chat widget loads correctly, allows user interaction, and supports sending and receiving messages.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the homepage and wait for the live chat widget to load."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the live chat icon appears and is accessible."
+      },
+      {
+        "type": "action",
+        "description": "Open the live chat widget."
+      },
+      {
+        "type": "action",
+        "description": "Send a test message through the chat interface."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the sent message appears in the chat history."
+      },
+      {
+        "type": "action",
+        "description": "Check that incoming messages (test with support if possible) are displayed correctly."
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure no errors occur during chat usage and that the widget remains responsive on desktop and mobile."
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Google Analytics Integration Verification",
+    "description": "Ensure that Google Analytics is correctly integrated and records user visits, page views, and interactions in real-time.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the CryptoTracker site in a new browser session."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify Google Analytics tracking script is loaded on the page."
+      },
+      {
+        "type": "action",
+        "description": "Navigate through different pages and interact with portfolio and charts."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm that corresponding pageview and event data are sent to Google Analytics (validated via browser devtools or GA real-time dashboard)."
+      },
+      {
+        "type": "action",
+        "description": "Refresh the page and close the browser tab."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that session data reflects these user interactions."
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "UNIX Time Conversion Utility Accuracy",
+    "description": "Validate that the custom UNIX time conversion utility correctly converts timestamps to human-readable formats consistent with user locale and display requirements.",
+    "category": "functional",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Input several UNIX timestamps into the utility covering different dates and times (including edge cases like leap year, DST transitions)."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the output displays correctly formatted date and time strings."
+      },
+      {
+        "type": "action",
+        "description": "Test conversion of invalid or out-of-range timestamps."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm that errors are handled gracefully and invalid inputs produce appropriate fallback outputs or error messages."
+      }
+    ]
+  }
+]
