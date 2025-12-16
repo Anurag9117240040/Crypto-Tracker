@@ -7,63 +7,84 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Manufacturing+Consent&display=swap" rel="stylesheet">
     <title>Crypto Tracker</title>
 </head>
 <body>
 
 
     <!-- Header -->
-    <header class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 fade-in">
+    <header class="navbar navbar-expand-lg navbar-light bg-white mb-4 fade-in main-navbar" style="border-bottom: 1px solid #e2e8f0;">
         <a class="navbar-brand d-flex align-items-center" href="#home">
-            <span style=" font-size: 1.3em; font-family: 'Manufacturing Consent', system-ui;">Crypto Tracker</span>
+            <span style="font-size: 1.5em; font-weight: 700; letter-spacing: 0.2px;">Crypto Tracker</span>
         </a>
-    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#observation">Track Coins</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#visuals">Visuals</a>
+                </li>
+                <li class="nav-item ml-2">
+                    <a class="btn btn-secondary btn-sm" id="nav-auth-link" href="login.html">Login / Sign Up</a>
+                </li>
+            </ul>
+        </div>
     </header>
     <!-- End Header -->
     
     <!-- Home Section -->
-    <section id="home" class="jumbotron text-center bg-warning mb-4 fade-in" style="border-radius: 10px; position:relative; overflow:hidden;">
+    <section id="home" class="jumbotron text-center mb-4 fade-in" style="border-radius: 12px; position:relative; overflow:hidden; background:#ffffff; border:1px solid #e2e8f0;">
         <div class="row align-items-center">
-            <div class="col-md-7 text-left">
-                <h1 class="display-4" style="color: #fff; font-weight: bold;">Track Crypto Prices Instantly</h1>
-                <p class="lead" style="color:#fff;">Get real-time prices, market cap, and more for your favorite cryptocurrencies. Stay ahead in the crypto world!</p>
-                <a href="#observation" class="btn btn-dark btn-lg mt-2">Get Started</a>
+            <div class="col-md-6 text-left">
+                <h1 class="display-4" style="color: #0f172a; font-weight: 700;">Track Crypto Prices Instantly</h1>
+                <p class="lead" style="color:#475569;">Get real-time prices, market cap, and more for your favorite cryptocurrencies. Stay ahead in the crypto world.</p>
+                <a href="#observation" class="btn btn-primary btn-lg mt-2 scroll-cta">Get Started</a>
+            </div>
+            <div class="col-md-6 text-center mt-4 mt-md-0">
+                <img class="hero-visual" src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?auto=format&fit=crop&w=900&q=80" alt="Crypto mining rigs and charts">
             </div>
         </div>
     </section>
     <!-- End Home Section -->
 
     <!-- About Section -->
-    <section id="about" class="container mb-5 py-4 fade-in" style="background: #fffbe6; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+    <section id="about" class="container mb-5 py-4 fade-in" style="background: #ffffff; border-radius: 12px; border:1px solid #e2e8f0;">
         <div class="row align-items-center">
             <div class="col-md-4 text-center mb-3 mb-md-0">
-                <img src="assets/bitcoin.png" alt="About Crypto" style="width: 150px; height: 150px;">
+                <img src="assets/bitcoin.png" alt="About Crypto" style="width: 100%; max-width: 260px; border-radius: 12px;">
                 
             </div>
             <div class="col-md-8">
-                <h2 style="color:#ff512f; font-weight: bold;">About Crypto Tracker</h2>
-                <p style="font-size:1.1em; color:#333;">Crypto Tracker is a simple website that helps you check the latest prices and details for popular cryptocurrencies. Just pick a coin and see its current price, market cap, and more—all updated in real time. Whether you are new to crypto or just want quick info, this site makes it easy to stay up to date.</p>
+                <h2 style="color:#0f172a; font-weight: 700;">About Crypto Tracker</h2>
+                <p style="font-size:1.05em; color:#475569;">Crypto Tracker is a simple website that helps you check the latest prices and details for popular cryptocurrencies. Just pick a coin and see its current price, market cap, and more—all updated in real time. Whether you are new to crypto or just want quick info, this site makes it easy to stay up to date.</p>
             </div>
         </div>
     </section>
     <!-- End About Section -->
 
     <!-- Real-Time Observation Section -->
-    <section id="observation" class="container mb-5 py-4 fade-in" style="background: #f8f9fa; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-        <h2 class="text-center mb-4" style="color:#ff512f; font-weight: bold;">
+    <section id="observation" class="container mb-5 py-4 fade-in" style="background: #ffffff; border-radius: 12px; border:1px solid #e2e8f0;">
+        <h2 class="text-center mb-4" style="color:#0f172a; font-weight: 700;">
            Real-Time Observation
         </h2>
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8 col-12">
                 <form action="" id="searchForm">
                     <div class="form-row">
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group mb-3">
                             <label for="coin">
-                                <span style="font-weight: 700; color: #ff512f;">Coin type</span>
+                                <span style="font-weight: 600; color: #0f172a;">Coin type</span>
                             </label>
                             <select class="form-control" name="coinType" id="coin">
                                 <option value="bitcoin">Bitcoin (BTC)</option>
@@ -89,8 +110,8 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="col-12 btn btn-primary ">Get Price</button>
-                    <button type="button" id="showChartBtn" class="col-12 btn btn-secondary mt-2">Show Chart</button>
+                    <button type="submit" class="col-12 btn btn-primary scroll-cta">Get Price</button>
+                    <button type="button" id="showChartBtn" class="col-12 btn btn-secondary mt-2 scroll-cta">Show Chart</button>
                 </form>
             </div>
         </div>
@@ -109,26 +130,53 @@
     </section>
     <!-- End Real-Time Observation Section -->
 
-    <!-- Portfolio Section (React Mount Point) -->
-    <section id="portfolio" class="container mb-5 py-4 fade-in" style="background: #f8f9fa; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-        <h2 class="text-center mb-4" style="color:#ff512f; font-weight: bold;">Portfolio</h2>
-        <div id="portfolio-root"></div>
+    <!-- Visual Highlights -->
+    <section id="visuals" class="container mb-5 py-4 fade-in" style="background: #ffffff; border-radius: 12px; border:1px solid #e2e8f0;">
+        <h2 class="text-center mb-4" style="color:#0f172a; font-weight: 700;">Visual Highlights</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&w=800&q=80" alt="Mining rigs">
+                    <div>
+                        <h5 style="margin:0;">Modern Mining</h5>
+                        <small class="muted">Efficient rigs powering the network.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=800&q=80" alt="Trading charts">
+                    <div>
+                        <h5 style="margin:0;">Market Insights</h5>
+                        <small class="muted">Clean charts for price discovery.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Data visualization">
+                    <div>
+                        <h5 style="margin:0;">Realtime Dashboards</h5>
+                        <small class="muted">Metrics that stay in sync.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- End Portfolio Section -->
 
     <!-- Footer -->
-    <footer class="bg-dark text-light text-center py-3 mt-5" style="border-radius: 18px 18px 0 0; background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%) !important;">
+    <footer class="text-center py-3 mt-5" style="border-radius: 12px; background: #ffffff; border:1px solid #e2e8f0;">
         <div class="container">
             <div class="mb-2">
-                <a href="https://twitter.com/" target="_blank" class="mx-2 text-warning"><i class="fab fa-twitter fa-lg"></i></a>
-                <a href="https://github.com/" target="_blank" class="mx-2 text-warning"><i class="fab fa-github fa-lg"></i></a>
-                <a href="https://linkedin.com/" target="_blank" class="mx-2 text-warning"><i class="fab fa-linkedin fa-lg"></i></a>
-                <a href="https://t.me/" target="_blank" class="mx-2 text-warning"><i class="fab fa-telegram fa-lg"></i></a>
-                <a href="https://discord.com/" target="_blank" class="mx-2 text-warning"><i class="fab fa-discord fa-lg"></i></a>
-                <a href="mailto:info@cryptotracker.com" class="mx-2 text-warning"><i class="fas fa-envelope fa-lg"></i></a>
+                <a href="https://twitter.com/" target="_blank" class="mx-2 text-secondary"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://github.com/" target="_blank" class="mx-2 text-secondary"><i class="fab fa-github fa-lg"></i></a>
+                <a href="https://linkedin.com/" target="_blank" class="mx-2 text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="https://t.me/" target="_blank" class="mx-2 text-secondary"><i class="fab fa-telegram fa-lg"></i></a>
+                <a href="https://discord.com/" target="_blank" class="mx-2 text-secondary"><i class="fab fa-discord fa-lg"></i></a>
+                <a href="mailto:info@cryptotracker.com" class="mx-2 text-secondary"><i class="fas fa-envelope fa-lg"></i></a>
             </div>
-            <div style="font-size:1.1em; font-weight:500;">Your gateway to real-time crypto insights. Powered by CoinGecko.</div>
-            <div style="font-size:0.95em;">&copy; 2024 Crypto Tracker by Anurag Gupta. All rights reserved.</div>
+            <div style="font-size:1.05em; font-weight:600; color:#0f172a;">Your gateway to real-time crypto insights. Powered by CoinGecko.</div>
+            <div style="font-size:0.95em; color:#475569;">&copy; 2024 Crypto Tracker by Anurag Gupta. All rights reserved.</div>
         </div>
     </footer>
     <!-- End Footer -->
@@ -137,20 +185,14 @@
     <script src="https://kit.fontawesome.com/4e8e8e4e8e.js" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- React and Babel for mounting the Portfolio component without a bundler -->
+    <!-- React and Babel for mounting the chart component without a bundler -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- react-chartjs-2 UMD -->
     <script src="https://unpkg.com/react-chartjs-2/dist/react-chartjs-2.min.js"></script>
-    <script type="text/babel" src="src/components/Portfolio.js"></script>
     <script type="text/babel" src="src/components/CoinChart.js"></script>
     <script type="text/babel">
-      const rootEl = document.getElementById('portfolio-root');
-      if (rootEl && window.Portfolio) {
-        const root = ReactDOM.createRoot(rootEl);
-        root.render(React.createElement(window.Portfolio));
-      }
       const reactObsChartEl = document.getElementById('react-coinchart-root');
       if (reactObsChartEl && window.CoinChart) {
         const croot2 = ReactDOM.createRoot(reactObsChartEl);

@@ -82,8 +82,8 @@ const CoinChart = () => {
         {
           label: `${coinId} price (USD)`,
           data: series.map((p) => p.y),
-          borderColor: '#ff512f',
-          backgroundColor: 'rgba(255,81,47,0.08)',
+          borderColor: '#2563eb',
+          backgroundColor: 'rgba(37,99,235,0.08)',
           pointRadius: 0,
           borderWidth: 2,
           fill: true,
@@ -117,13 +117,13 @@ const CoinChart = () => {
       x: {
         type: 'time',
         time: { unit: timeframe === '24h' ? 'hour' : 'day' },
-        grid: { display: false },
-        ticks: { color: '#e0e6f7' },
+        grid: { color: '#e2e8f0' },
+        ticks: { color: '#0f172a' },
       },
       y: {
         beginAtZero: false,
-        grid: { color: 'rgba(255,255,255,0.08)' },
-        ticks: { color: '#e0e6f7' },
+        grid: { color: '#e2e8f0' },
+        ticks: { color: '#0f172a' },
       },
     },
   }), [timeframe]);
@@ -131,21 +131,22 @@ const CoinChart = () => {
   const Line = window.ReactChartJS2 && window.ReactChartJS2.Line ? window.ReactChartJS2.Line : null;
 
   return (
-    <div style={{ background: 'rgba(34, 40, 60, 0.7)', borderRadius: '12px', padding: '1rem', border: '1.5px solid rgba(0,255,231,0.12)' }}>
+    <div style={{ background: '#ffffff', borderRadius: '12px', padding: '1rem', border: '1px solid #e2e8f0', boxShadow: '0 8px 20px rgba(15,23,42,0.05)' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-        <h4 style={{ margin: 0, color: '#00ffe7', textShadow: '0 2px 12px #00ffe7cc' }}>Interactive Chart</h4>
+        <h4 style={{ margin: 0, color: '#0f172a' }}>Interactive Chart</h4>
         <div style={{ display: 'flex', gap: '8px' }}>
           {['24h','7d','30d','1y'].map((tf) => (
             <button
               key={tf}
               onClick={() => setTimeframe(tf)}
               style={{
-                background: timeframe === tf ? 'linear-gradient(90deg, #00ffe7 0%, #7f5af0 100%)' : '#232946',
-                color: timeframe === tf ? '#181c2f' : '#e0e6f7',
-                border: '1px solid rgba(0,255,231,0.5)',
+                background: timeframe === tf ? '#2563eb' : '#f1f5f9',
+                color: timeframe === tf ? '#ffffff' : '#0f172a',
+                border: '1px solid #e2e8f0',
                 borderRadius: '8px',
                 padding: '6px 10px',
-                fontWeight: 'bold',
+                fontWeight: 600,
+                boxShadow: timeframe === tf ? '0 8px 18px rgba(37, 99, 235, 0.18)' : 'none',
               }}
             >{tf}</button>
           ))}
@@ -153,9 +154,9 @@ const CoinChart = () => {
       </div>
       <div style={{ height: '280px' }}>
         {error ? (
-          <div style={{ color: '#ff6b6b' }}>{error}</div>
+          <div style={{ color: '#b91c1c' }}>{error}</div>
         ) : loading || !Line ? (
-          <div style={{ color: '#e0e6f7' }}>Loading chart...</div>
+          <div style={{ color: '#475569' }}>Loading chart...</div>
         ) : (
           <Line data={data} options={options} />
         )}
