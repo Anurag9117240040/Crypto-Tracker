@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Crypto Tracker – Admin Dashboard</title>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-white mb-4 fade-in main-navbar" style="border-bottom: 1px solid #e2e8f0;">
+        <a class="navbar-brand d-flex align-items-center" href="index.html#home">
+            <span style="font-size: 1.5em; font-weight: 700; letter-spacing: 0.2px;">Crypto Tracker</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#observation">Track Coins</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#visuals">Visuals</a>
+                </li>
+                <li class="nav-item ml-2 position-relative" id="nav-auth-container">
+                    <a class="btn btn-secondary btn-sm" id="nav-auth-link" href="login.html">Account</a>
+                    <div class="profile-dropdown" id="nav-profile-dropdown"></div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container" id="admin-root">
+        <section class="mb-4 py-4 fade-in" style="background:#ffffff;border-radius:12px;border:1px solid #e2e8f0;">
+            <h2 style="color:#0f172a;">Admin Dashboard</h2>
+            <p style="color:#475569;">Overview of users, authentication activity, and basic analytics.</p>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="gallery-card">
+                        <h5>Total users</h5>
+                        <div id="stat-total-users" style="font-size:1.8rem;font-weight:700;">0</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="gallery-card">
+                        <h5>Total logins</h5>
+                        <div id="stat-total-logins" style="font-size:1.8rem;font-weight:700;">0</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="gallery-card">
+                        <h5>Total signups</h5>
+                        <div id="stat-total-signups" style="font-size:1.8rem;font-weight:700;">0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-4 py-4 fade-in" style="background:#ffffff;border-radius:12px;border:1px solid #e2e8f0;">
+            <h3 style="color:#0f172a;">Registered users</h3>
+            <div class="table-responsive mt-3">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Created at</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-users-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="mb-4 py-4 fade-in" style="background:#ffffff;border-radius:12px;border:1px solid #e2e8f0;">
+            <h3 style="color:#0f172a;">Authentication & page logs</h3>
+            <div class="table-responsive mt-3">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>User</th>
+                            <th>Path</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-logs-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-vhJrNQw8vYjDdyCjTiMQuuLHfoalGoVYLRNvKcJsteVEh9Up7ZxV06P88GJEv3Ew"
+        crossorigin="anonymous"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+
+

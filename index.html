@@ -35,8 +35,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#visuals">Visuals</a>
                 </li>
-                <li class="nav-item ml-2">
+                <li class="nav-item ml-2 position-relative" id="nav-auth-container">
                     <a class="btn btn-secondary btn-sm" id="nav-auth-link" href="login.html">Login / Sign Up</a>
+                    <div class="profile-dropdown" id="nav-profile-dropdown"></div>
                 </li>
             </ul>
         </div>
@@ -184,6 +185,7 @@
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/4e8e8e4e8e.js" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- React and Babel for mounting the chart component without a bundler -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
